@@ -10,5 +10,5 @@ COPY package.json package-lock.json ./
 RUN npm cache clean --force && npm install
 
 COPY . /opt/app
-EXPOSE 3000
+EXPOSE 9000
 CMD [ "npm", "start" ]

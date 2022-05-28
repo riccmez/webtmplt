@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body style="height: 100%; width: 100vw; background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);background-repeat: no-repeat;
+    background-attachment: fixed;">
+    <center><h1>Alumnos</h1></center>
+    <br>
+    <center>
+      <a class="btn btn-primary" href="/adduser" role="button">Añadir</a>
+    </center>
+    <br>
+
+    <div class="container-fluid">
+        
+        <table class="table caption-top">
+            <thead class="table" >
+              <tr>
+                <th scope="col">id-alumno</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Grado</th>
+                <th scope="col">id-salon</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i<rows.length; i++) {%>
+                    <tr>
+                      <th scope="row"><%- rows[i].id  %></th>
+                      <td><%- rows[i].nombre %></td>
+                      <td><%- rows[i].apellido %></td>
+                      <td><%- rows[i].grado %></td>
+                      <td><%- rows[i].idsalon %></td>
+                    </tr>
+                  <% } %>
+            </tbody>
+          </table>
+
+    </div>
+  </body>
+
+  <%- include('../partials/footer'); %>
+
+</html>

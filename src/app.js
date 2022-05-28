@@ -7,11 +7,16 @@ const config = require('../config.js');
 const app = express();
 const server = http.Server(app);
 const io = socketIO(server);
+const mysql = require('mysql');
 
 // settings
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
+
+// middlewares
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 // routes
 app.use(require('./routes'));
