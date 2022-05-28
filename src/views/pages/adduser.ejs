@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body style="height: 100%; width: 100vw; background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);background-repeat: no-repeat;
+  background-attachment: fixed;">
+
+        <center><h1>Añadir Usuario</h1></center>
+        <br><br>
+        <div class="container">
+            <div class="input-group mb-3"> <!-- Nombre -->  
+                <span class="input-group-text">N</span>
+                <input id="nombre" type="text" required="required" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3"> <!-- Numero -->  
+                <span class="input-group-text" >#</span>
+                <input id="telefono" type="number" required="required" class="form-control" placeholder="Número" aria-label="Número" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3"> <!-- email -->  
+                <span class="input-group-text">@</span>
+                <input id="email" type="text" required="required" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+            </div>
+            <center><a id="btn" class="btn btn-primary" onclick="testclick" role="button">Añadir</a></center>
+        </div>
+</body>
+<%- include('../partials/footer'); %>
+<script>
+    let btn = document.getElementById('btn');
+    btn.onclick = function(){
+        let name = document.getElementById('nombre');
+        let phone = document.getElementById('telefono');
+        let email = document.getElementById('email');
+        if(name.value == "" || phone.value == "" || email.value == "")
+            alert("Se debe llenar todos los campos");
+        else
+            window.location.href = `agregar/${name.value}/${phone.value}/${email.value}`; 
+    }
+
+</script>
+</html>
